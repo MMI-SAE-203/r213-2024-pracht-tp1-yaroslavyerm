@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+const sectionOpen = ref<number | null>(null)
 const sectionsData = [
   {
     label: 'bouton 1',
@@ -32,8 +33,11 @@ const sectionsData = [
   <h1 class="text-2xl">Boucle sur des données</h1>
   <section
   v-for="({ label, texte }, key) of sectionsData" :v-key="key">
-  <pre class="font-mono">key : {{ key }}</pre>
-  <pre class="font-mono">label : {{ label }}</pre>
-  <pre class="font-mono">texte : {{ texte }}</pre>
+  <button 
+  @pointerdown="sectionOpen = sectionOpen===key?null:key">
+    {{ label }}
+  </button>
+  <p
+  v-show="sectionOpen===key">{{ texte }}</p>
 </section>
 </template>
