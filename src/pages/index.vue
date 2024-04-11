@@ -4,7 +4,7 @@ const sectionOpen = ref(0)
 </script>
 
 <template>
-  <h1 class="text-2xl">Bonjour monde !</h1>
+  <h1 class="text-2xl">Accordeon</h1>
   <section>
     <button 
     class="text-xl"
